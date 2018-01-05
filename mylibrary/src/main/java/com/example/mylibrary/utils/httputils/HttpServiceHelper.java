@@ -4,7 +4,6 @@ import android.content.Context;
 
 
 import com.example.mylibrary.utils.LogUtils;
-import com.example.mylibrary.utils.Urls;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +34,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class HttpServiceHelper {
     private HttpService httpService;
     private Retrofit retrofit;
+    public static final String BASE_URL = "http://192.168.4.138:8080/";
 
     private HttpServiceHelper() {
         //Cookie持久化
@@ -46,7 +46,7 @@ public class HttpServiceHelper {
                 .cookieJar(new JavaNetCookieJar(cookieManager));
 
         OkHttpClient build = client.build();
-        this.retrofit = new Retrofit.Builder().baseUrl(Urls.BASE_URL)
+        this.retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .client(build)
                 .build();
