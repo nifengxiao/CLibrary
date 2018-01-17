@@ -34,15 +34,10 @@ dependencies {
     //retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
-    //glide
-    implementation 'com.github.bumptech.glide:glide:4.5.0'
-    annotationProcessor 'com.github.bumptech.glide:glide:4.5.0'
     //图片压缩
     implementation 'id.zelory:compressor:2.1.0'
     //跑马灯
     implementation 'com.github.nifengxiao:MarqueeViewLibrary:latest.release'
     //图片选择
-    implementation ('com.github.nifengxiao:PhotoPicker:latest.release') {
-        exclude group: 'com.github.bumptech.glide'
-    }
+    implementation 'com.github.nifengxiao:PhotoPicker:latest.release'
 }

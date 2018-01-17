@@ -18,8 +18,19 @@ android {
     }
 }
 
+repositories {
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation  "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
     testImplementation 'junit:junit:4.12'
+    api project(':mylibrary')
+    //跑马灯
+    implementation 'com.github.nifengxiao:MarqueeViewLibrary:latest.release'
+    //图片选择
+    implementation 'com.github.nifengxiao:PhotoPicker:latest.release'
 }
